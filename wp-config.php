@@ -55,6 +55,7 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT'])
   && (php_sapi_name() != "cli")) {
 
   if ($_SERVER['REQUEST_URI'] == '/') {
+    header("Cache-Control: max-age=604800, public");
     echo file_get_contents('index.html');
     exit();
   }
