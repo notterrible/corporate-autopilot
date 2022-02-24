@@ -54,10 +54,11 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
 if (!empty($_ENV['PANTHEON_ENVIRONMENT'])
   && (php_sapi_name() != "cli")) {
 
-  if ($_SERVER['REQUEST_URI'] == '/') {
-    header("Cache-Control: max-age=604800, public");
-    echo file_get_contents('index.html');
-    exit();
+    // If path is anything other than a wp-* path.
+    if (strpos($_SERVER['REQUEST_URI'], 'wp') !== -1) {
+        header("Cache-Control: max-age=604800, public");
+        echo file_get_contents('index.html');
+        exit();
   }
 }
   
