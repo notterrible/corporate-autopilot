@@ -1,5 +1,5 @@
-/* .hero-image-text figcaption {
-  background-color: #e13125;
+.hero-image-text figcaption {
+  background-color: purple;
   padding: 10px;
   border-radius: 20px;
 }
@@ -8,4 +8,4 @@
 .p-w-r .pr-snippet-stars .pr-star-v4::before,
 .p-w-r .pr-review .pr-star-v4::before {
   color: #3b84c8;
-} */
+}
