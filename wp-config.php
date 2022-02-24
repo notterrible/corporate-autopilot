@@ -99,19 +99,6 @@ if (extension_loaded('newrelic')) {
  */
 define('WP_CRON_CONTROL_SECRET', '18787b5221a115f0b5a31d6ad8ae89e3');
 
-/**
- * Add Cloud Vision API Key
- */
-// define('GCV_API_KEY', '9a3c701d17b0749a4a22e7b28c65bd5661cd66dd');
-
-/**
- * Add Pantheon Redirection.
- */
-$redirect_config = __DIR__ . "/redirect.php";
-if (file_exists($redirect_config)) {
-    require_once $redirect_config;
-}
-
 /* That's all, stop editing! Happy Pressing. */
 
 
