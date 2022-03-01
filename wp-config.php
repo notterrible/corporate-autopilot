@@ -48,20 +48,7 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
     define('SECURE_AUTH_SALT', 'put your unique phrase here');
     define('LOGGED_IN_SALT', 'put your unique phrase here');
     define('NONCE_SALT', 'put your unique phrase here');
-}
-
-// Specific to Colgate
-if (!empty($_ENV['PANTHEON_ENVIRONMENT'])
-  && (php_sapi_name() != "cli")) {
-
-    // If path is anything other than a wp-* path.
-    if (strpos($_SERVER['REQUEST_URI'], 'wp') !== -1) {
-        header("Cache-Control: max-age=604800, public");
-        echo file_get_contents('index.html');
-        exit();
-  }
-}
-  
+}  
 
 
 /** Standard wp-config.php stuff from here on down. **/
