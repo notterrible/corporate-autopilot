@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This config file is yours to hack on. It will work out of the box on Pantheon
  * but you may find there are a lot of neat tricks to be used here.
@@ -9,12 +8,11 @@
  * https://pantheon.io/docs
  */
 
-
 /**
  * Pantheon platform settings. Everything you need should already be set.
  */
 if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-    require_once(dirname(__FILE__) . '/wp-config-pantheon.php');
+	require_once(dirname(__FILE__) . '/wp-config-pantheon.php');
 
 /**
  * Local configuration information.
@@ -23,9 +21,9 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * keep your config separate, we recommend using a 'wp-config-local.php' file,
  * which you should also make sure you .gitignore.
  */
-} elseif (file_exists(dirname(__FILE__) . '/wp-config-local.php') && !isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-    # IMPORTANT: ensure your local config does not include wp-settings.php
-    require_once(dirname(__FILE__) . '/wp-config-local.php');
+} elseif (file_exists(dirname(__FILE__) . '/wp-config-local.php') && !isset($_ENV['PANTHEON_ENVIRONMENT'])){
+	# IMPORTANT: ensure your local config does not include wp-settings.php
+	require_once(dirname(__FILE__) . '/wp-config-local.php');
 
 /**
  * This block will be executed if you are NOT running on Pantheon and have NO
@@ -34,21 +32,21 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * If you are only running on Pantheon, you can ignore this block.
  */
 } else {
-    define('DB_NAME', 'database_name');
-    define('DB_USER', 'database_username');
-    define('DB_PASSWORD', 'database_password');
-    define('DB_HOST', 'database_host');
-    define('DB_CHARSET', 'utf8');
-    define('DB_COLLATE', '');
-    define('AUTH_KEY', 'put your unique phrase here');
-    define('SECURE_AUTH_KEY', 'put your unique phrase here');
-    define('LOGGED_IN_KEY', 'put your unique phrase here');
-    define('NONCE_KEY', 'put your unique phrase here');
-    define('AUTH_SALT', 'put your unique phrase here');
-    define('SECURE_AUTH_SALT', 'put your unique phrase here');
-    define('LOGGED_IN_SALT', 'put your unique phrase here');
-    define('NONCE_SALT', 'put your unique phrase here');
-}  
+	define('DB_NAME',          'database_name');
+	define('DB_USER',          'database_username');
+	define('DB_PASSWORD',      'database_password');
+	define('DB_HOST',          'database_host');
+	define('DB_CHARSET',       'utf8');
+	define('DB_COLLATE',       '');
+	define('AUTH_KEY',         'put your unique phrase here');
+	define('SECURE_AUTH_KEY',  'put your unique phrase here');
+	define('LOGGED_IN_KEY',    'put your unique phrase here');
+	define('NONCE_KEY',        'put your unique phrase here');
+	define('AUTH_SALT',        'put your unique phrase here');
+	define('SECURE_AUTH_SALT', 'put your unique phrase here');
+	define('LOGGED_IN_SALT',   'put your unique phrase here');
+	define('NONCE_SALT',       'put your unique phrase here');
+}
 
 
 /** Standard wp-config.php stuff from here on down. **/
@@ -71,22 +69,9 @@ $table_prefix = 'wp_';
  * You may want to examine $_ENV['PANTHEON_ENVIRONMENT'] to set this to be
  * "true" in dev, but false in test and live.
  */
-if (!defined('WP_DEBUG')) {
-    define('WP_DEBUG', false);
+if ( ! defined( 'WP_DEBUG' ) ) {
+	define('WP_DEBUG', false);
 }
-
-/**
- * Add New Relic goodness.
- */
-if (extension_loaded('newrelic')) {
-    // Enable distributed tracing
-    ini_set('newrelic.distributed_tracing_enabled', 'true');
-}
-
-/**
- * Define Cron Control Secret
- */
-define('WP_CRON_CONTROL_SECRET', '18787b5221a115f0b5a31d6ad8ae89e3');
 
 /* That's all, stop editing! Happy Pressing. */
 
@@ -94,9 +79,8 @@ define('WP_CRON_CONTROL_SECRET', '18787b5221a115f0b5a31d6ad8ae89e3');
 
 
 /** Absolute path to the WordPress directory. */
-if (!defined('ABSPATH')) {
-    define('ABSPATH', dirname(__FILE__) . '/');
-}
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
