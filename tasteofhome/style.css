@@ -2,3 +2,9 @@
   margin-bottom: 48px;
   bacgkround: orange !important;
 }
+#desktop-nav-banner {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: fuchsia;
+}
