@@ -28,6 +28,10 @@ workflows:
   # New site creation
   deploy_product:
     after:
+      - description: "Wake up!"
+        script: private/grab-a-brush-and-put-a-little-makeup.php
+        type: webphp
+
       - description: "Install WordPress core"
         script: private/wp-site-install.php
         type: webphp
